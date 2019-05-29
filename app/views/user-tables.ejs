@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css" rel="stylesheet"/>
+  </head>
+
+  <body style="margin-right:100px; margin-left:100px">
+
+    <script>
+      function myFunction(id) {
+        var x = document.getElementById("vacation");
+        var y = document.getElementById("lieu");
+
+        if (id === "lieu-button")
+        {
+          x.style.display = "none";
+          y.style.display = "block";
+        }
+        else if (id === "vacation-button")
+        {
+          y.style.display = "none";
+          x.style.display = "block";
+        }
+
+      }
+    </script>
+
+    <div class="ui two top attached buttons">
+      <button id="lieu-button" autofocus=true class="ui button" onclick="myFunction(this.id)" selected>Lieu</button>
+      <button id="vacation-button" class="ui button" onclick="myFunction(this.id)">Vacation</button>
+    </div>
+
+    <div id="vacation" style="display:none">
+      <table class="ui celled table">
+        <thead> Current Time Left
+          <tr><th>Name</th>
+          <th>lieuTime</th>
+          <th>vacationTime</th>
+        </tr></thead>
+        <tbody>
+          <% for(var i=0; i < data.length; i++) { %>
+          <tr>
+           <td><%= data[i].name %></td>
+           <td><%= data[i].lieu %></td>
+           <td><%= data[i].vacation %></td>
+           </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <table class="ui celled table">
+        <thead> Record
+          <tr>
+            <th>Date</th>
+            <th>Comment</th>
+            <th>Previous Time</th>
+            <th>Time Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0; i < record.length; i++) { %>
+          <tr>
+           <td><%= record[i].dateChange %></td>
+           <td><%= record[i].comment %></td>
+           <td><%= record[i].prevTime %></td>
+           <td><%= record[i].changed %></td>
+           </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div id="lieu">
+      <table class="ui celled table">
+        <thead>
+          <tr><th>Name</th>
+          <th>Age</th>
+          <th>Job</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td data-label="Name">James</td>
+            <td data-label="Age">24</td>
+            <td data-label="Job">Engineer</td>
+          </tr>
+          <tr>
+            <td data-label="Name">Jill</td>
+            <td data-label="Age">26</td>
+            <td data-label="Job">Engineer</td>
+          </tr>
+          <tr>
+            <td data-label="Name">Elyse</td>
+            <td data-label="Age">24</td>
+            <td data-label="Job">Designer</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
