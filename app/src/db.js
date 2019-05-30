@@ -1,4 +1,5 @@
 const mysql = require('mysql');
+var LocalStrategy = require('passport-local').Strategy;
 
 
 var pool = mysql.createPool({

@@ -9,12 +9,17 @@
   "author": "grant",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "express-session": "^1.16.1",
     "lodash": "^4.17.11",
     "mysql": "^2.17.1",
     "nodemon": "^1.19.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "semantic": "0.0.1",
     "semantic-ui": "^2.4.2",
     "semantic-ui-dropdown": "^2.4.1"
